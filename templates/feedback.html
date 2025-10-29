@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+</head>
+<body style="font-family: Arial; text-align: center;">
+    <h2>Feedback Form</h2>
+    {% if not submitted %}
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name"><br><br>
+        <label>Email:</label>
+        <input type="email" name="email"><br><br>
+        <label>Message:</label><br>
+        <textarea name="message" rows="4" cols="30"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% else %}
+    <h3>Feedback Submitted</h3>
+    <p><b>Name:</b> {{ name }}</p>
+    <p><b>Email:</b> {{ email }}</p>
+    <p><b>Message:</b> {{ message }}</p>
+    <a href="/feedback">Submit Again</a>
+    {% endif %}
+</body>
+</html>
